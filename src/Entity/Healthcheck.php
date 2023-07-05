@@ -7,7 +7,9 @@ use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: HealthcheckRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    paginationEnabled: true,
+)]
 class Healthcheck
 {
     #[ORM\Id]
