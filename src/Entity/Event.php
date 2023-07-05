@@ -50,6 +50,9 @@ class Event
     #[ORM\Column(length: 255)]
     private ?string $telephone = null;
 
+    #[ORM\Column]
+    private ?bool $isDeleted = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -147,6 +150,18 @@ class Event
     public function setTelephone(string $telephone): static
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function isIsDeleted(): ?bool
+    {
+        return $this->isDeleted;
+    }
+
+    public function setIsDeleted(bool $isDeleted): static
+    {
+        $this->isDeleted = $isDeleted;
 
         return $this;
     }
